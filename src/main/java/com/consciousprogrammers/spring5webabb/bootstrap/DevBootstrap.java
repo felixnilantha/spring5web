@@ -43,11 +43,15 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         namasthe.setName("Namasthe publication");
         namasthe.setAddress("Toranto");
 
+
+
         bookPowerOfNow.setPublisher(namasthe);
 
         eckhart.getBooks().add(bookPowerOfNow);
+        publisherRepository.save(namasthe);
         authorRepository.save(eckhart);
         bookRepository.save(bookPowerOfNow);
+
 
 
         Author martin = new Author();
@@ -68,8 +72,10 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         martin.getBooks().add(refactoring);
 
+        publisherRepository.save(aWesley);
         authorRepository.save(martin);
         bookRepository.save(refactoring);
+
     }
 
 
